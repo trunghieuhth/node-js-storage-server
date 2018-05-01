@@ -8,10 +8,17 @@
 const Joi = require('joi');
 
 module.exports = {
-  // GET /api/{{version}}/{{fileType}}/:fileId
-  getFile: {
+  // GET /api/{{version}}/images
+  getImages: {
+    query: {
+      page: Joi.number(),
+      limit: Joi.number(),
+    },
+  },
+  // GET /api/{{version}}/images/:imageId
+  getImage: {
     params: {
-      fileId: Joi.string().hex().required(),
+      imageId: Joi.string().hex(),
     },
   },
 };
