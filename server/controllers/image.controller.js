@@ -59,7 +59,8 @@ exports.getImage = async (req, res, next) => {
  * POST /images
  * Upload a new image
  * @param {object} req.file - Image details
- * @param {string} req.headers.host - Host
+ * @param {string} req.headers.host - Host (E.g. "api.domain.com"
+ * @param {string} req.protocol - Protocol (E.g. "http", "https")
  */
 exports.postUpload = async (req, res, next) => {
   try {
