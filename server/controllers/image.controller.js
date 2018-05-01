@@ -69,7 +69,7 @@ exports.postUpload = async (req, res, next) => {
       return next(err);
     }
     // Get domain url
-    const DOMAIN_URL = req.headers.host;
+    const DOMAIN_URL = `${req.protocol}://${req.headers.host}`;
     // Create new file
     const file = new File();
     file.type = TYPE.IMAGE;
